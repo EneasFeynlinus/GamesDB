@@ -1,6 +1,7 @@
 package com.cyberdev.gamesend.dto;
 
 import com.cyberdev.gamesend.entities.Game;
+import com.cyberdev.gamesend.projections.GameMinProjection;
 
 public class GameMinDTO {
 	
@@ -22,6 +23,14 @@ public class GameMinDTO {
 		shortDescription = entity.getShortDescription();
 	}
 
+	public GameMinDTO(GameMinProjection projection) {
+		id = projection.getId();
+		title = projection.getTitle();
+		year = projection.getYear();
+		imgUrl = projection.getImgUrl();
+		shortDescription = projection.getShortDescription();
+	}
+	
 	public Long getId() {
 		return id;
 	}
